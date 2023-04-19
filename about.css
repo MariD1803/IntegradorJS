@@ -1,0 +1,607 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+  
+
+@font-face {
+    font-family: "cursiva";
+    src: url(./fonts/OleoScriptSwashCaps-Bold.ttf);    
+}
+
+@font-face {
+    font-family: "inspiration";
+    src: url(./fonts/Inspiration-Regular.ttf);    
+}
+:root {
+    --xlarge:45px;
+    --large: 36px;
+    --medium: 28px;
+    --regular: 20px;
+    --reg_small: 16px;
+    --small: 14px;
+    --xsmall: 10px;
+    --turquoise: #45b2ae;
+    --pink: #f397a9;
+    --blue: #20254a;
+    --yellow: #ffdf9e;
+    --darkyellow:hwb(43 42% 0%);
+    --grey: rgba(170, 169, 169, 0.356);
+
+
+}
+
+
+body {   
+    margin: 0;
+    top: 0;
+}
+
+
+/*Navbar*/
+.navbar {
+    display: flex;
+    padding-inline-end: 40px;
+    align-items: center;
+    gap: 75px;
+    height: 80px;
+    
+}
+
+.navbar label {
+    cursor: pointer;
+}
+
+.navbar i {
+    font-size: var(--large);  
+    align-items: center;
+}
+
+.navbar a {
+    font-size: var(--large);
+    text-decoration: none;
+    color: black;
+    font-family: "cursiva";
+}
+
+.navbar a:hover {
+    color: var(--turquoise);
+}
+
+.header {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    box-shadow: rgba(67, 71, 75, 0.219) 0px 8px 24px;
+    position: fixed;
+    top: 0;    
+    z-index: 1; 
+    background-image: linear-gradient(to right, white , var(--pink));
+}
+
+.header img {
+    height: 70px;
+    width: 120px;
+    margin-inline-start: 20px;
+}
+
+.check {
+    display: none;    
+}
+
+/*Body*/
+main {
+    
+    margin-top: 120px;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10%;
+}
+
+.main {
+    flex-direction: column;
+    width: 50%;
+}
+
+.texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    width: 80%;
+}
+
+.titulo {
+    font-family: "cursiva";
+    font-size: var(--large);
+    margin-top: 13px;
+}
+
+.main_img {
+    position: relative !important;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+#foto {
+    background: url(./img/chef.png) center/cover no-repeat;
+    position: absolute;
+    top: 30;
+    left: 0;
+    width: 48%;
+    height: 70%;
+}
+
+#foto_dos {
+    background: url(./img/moana.png) center/cover no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48%;
+    margin-left: 42%;
+    height: 70%;
+    margin-top: 20%;
+    border-top: white 15px solid;
+    border-left: white 15px solid;
+}
+
+#titulo {
+    font-family: "inspiration";
+    font-size: 70px;
+    word-spacing: 40px;
+    text-align: center;
+   
+}
+
+#main_rigth {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 10%;
+}
+
+/*Cursos*/
+
+.linea {
+    height: 2px;
+    background-color: black;
+    width: 90%;
+}
+
+.img_cursos {
+    width: 100%;
+    height: 100%;
+
+}
+
+.cursos {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.text_cursos {
+    background-color: var(--grey);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.text_cursos h3 {
+    font-family: "cursiva";
+    font-size: var(--medium);
+}
+
+.text_cursos p {
+    font-size: var(--regular);
+}
+
+.text_cursos button {
+    background-image:  linear-gradient(to right,  var(--pink), var(--yellow), var(--pink));
+    border-color: var(--grey);
+    border-radius: 2px;
+    font-weight: 800;
+    cursor: pointer;
+
+}
+
+.linea_cur {
+    background-color: rgba(128, 128, 128, 0.356);
+    height: 1px;
+    width: 100%;
+}
+
+/*Fotos de Los Cards*/
+
+#saludable {
+    background: url(./img/chef3.png) center/cover no-repeat;
+    height: 300px;
+    width: 30%;
+}
+
+#fondant {
+    background: url(./img/unicornia2.png) left/cover no-repeat;
+    height: 300px;
+    width: 30%;
+}
+
+#materiales {
+    background: url(./img/decoración2.png) center/cover no-repeat;
+    height: 300px;
+    width: 30%;
+}
+
+/**/
+
+#curso_titulo {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+#curso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    
+}
+
+#tit {
+    font-family: "cursiva";
+    font-size: var(--xlarge);
+    margin: 0 3%;
+
+}
+
+
+
+/*Footer*/
+footer {
+    background-image: linear-gradient(to right, var(--pink) , var(--yellow), var(--turquoise), var(--pink));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    margin-top: 180px;
+}
+
+
+
+footer h3 {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        height: 70px;
+    }
+
+    .header img {
+        height: 70px;
+        width: 90px;
+        padding-inline-start: 0;
+    }
+    .navbar a {
+        font-size: var(--medium);
+    }
+
+    /*Body*/
+    
+    main {
+        padding: 30px;
+    }
+
+    #titulo {
+        font-size: var(--xlarge);
+        word-spacing: 20px;
+    }
+
+    #foto {
+        height: 60%;
+    }
+
+    #foto_dos {
+        height: 60%;
+        margin-left: 43%;
+        margin-top: 30%;
+    }
+
+}
+
+
+@media (max-width: 870px) {
+    html {
+        scroll-padding-top: 70px;
+    }
+
+    .header {
+        height: 60px;
+    }
+
+    .header img {
+        height: 60px;
+        width: 80px;
+    }
+
+    .navbar a {
+        font-size: var(--regular);
+    }
+
+    .navbar i {
+        font-size: var(--medium);  
+    }
+
+    /*Body*/
+    main {
+        gap: 10px;
+    }
+    .main {
+        width: 65%;
+        padding: 0;
+    }
+    .texto {
+        width: 100%;
+    }
+
+    .titulo {
+        margin-top: 13px;
+        
+    }
+
+    #titulo {
+        word-spacing: 10px;
+        font-size: var(--large);
+    }
+
+    .main_img {
+        padding: 20px;
+        padding-top: 0px;
+        padding-right: 0px;
+
+    }
+
+    
+    #main_rigth {
+        gap: 4%;
+        width: 50%;
+    }
+
+    #foto {
+        position: relative;
+        width: auto;
+        height: 50%;
+        border-radius: 10px;
+    }
+
+    #foto_dos {
+        position: relative;
+        width: auto;
+        margin: 0;
+        margin-top: 5%;
+        border-left: none;
+        border-top: none;
+        height: 50%;
+        border-radius: 10px;
+
+    }
+
+    /*Fotos de Los Cards*/
+
+    #saludable {
+        height: 200px;
+        width: 40%;
+    }
+
+    #fondant {
+        height: 200px;
+        width: 40%;
+    }
+
+    #materiales {
+        height: 200px;
+        width: 40%;
+    }
+
+    .text_cursos {
+        padding: 10px;
+        height: 180px;
+    }
+
+    .text_cursos h3 {
+        font-size: var(--regular);
+    }
+
+    .text_cursos p {
+        font-size: var(--reg_small);
+    }
+
+    .text_cursos button {
+        font-size: var(--xsmall);
+    }
+
+    /*Footer*/
+    footer {
+        margin-top: 100px;
+    }
+
+    footer h3 {
+        font-size: var(--small);
+    }
+
+    
+}
+
+
+@media (max-width: 590px) {
+
+    html {
+        scroll-padding-top: 90px;
+        height: 100vh;
+    }
+
+    body {
+        height: 100vh;
+    }
+
+    .header img {
+        height: 60px;
+        width: 100px;
+        margin-inline-start: 4px;
+    }
+
+    .navbar {
+        padding-inline-end: 10px;
+        gap: 20px;
+    }
+
+    .navbar i {
+        display: block;
+        padding-inline-end: 30px;
+    }
+
+    /*Body*/
+
+    main {
+        padding: 10px;
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .main {
+        width: 90%;
+        padding: 0;
+    }
+    .texto {
+        width: 90%;
+    }
+
+    .main_img {
+        padding: 0;
+        height: 300px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .titulo {
+        font-size: var(--medium);
+        text-align: center;
+        margin: 0;
+    }
+
+    .texto {
+        width: 100%;
+    }
+
+    
+    #main_rigth {
+        gap: 2%;
+        width: 90%;
+        padding: 0;
+    }
+
+    #foto {
+        position: relative;
+        width: 50%;
+        height: 90%;
+        border-radius: 10px;
+    }
+
+    #foto_dos {
+        position: relative;
+        width: 50%;
+        margin: 0;
+        margin-top: 0;
+        border-left: none;
+        border-top: none;
+        height: 90%;
+        border-radius: 10px;
+
+    }
+
+     /*Footer*/  
+    
+    footer {
+        margin-top: 180px;
+        
+    }
+    
+    
+    footer h3 {
+        font-size: var(--small);
+    }
+
+    /*Fotos de Los Cards*/
+
+    #saludable {
+        height: auto;
+        width: 45%;
+    }
+
+    #fondant {
+        height: auto;
+        width: 45%;        
+
+    }
+
+    #materiales {
+        height: auto;
+        width: 45%;
+    }
+
+    .text_cursos {
+        padding: 10px;
+        height: auto;
+        width: 45%;
+    }
+
+    .text_cursos h3 {
+        font-size: var(--reg_small);
+    }
+
+    .text_cursos p {
+        font-size: var(--small);
+    }
+
+    .text_cursos button {
+        font-size: var(--xsmall);
+    }
+
+    #curso {
+        padding: 10px;
+    }
+
+    #curso_titulo {
+        margin-bottom: 40px;
+    }
+
+    /*Footer*/
+    footer {
+        margin-top: 100px;
+    }
+
+    footer h3 {
+        font-size: var(--small);
+    }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />        
+        <link rel="icon" type="image.png" href="./img/icononav.png">
+        <link rel="stylesheet" href="contacto.css">
+    </head>
+    <body>
+        <header class="header">
+            <a href="index.html"><img src="./img/logo-removebg-preview.png" alt="logo"></a>
+       
+ 
+            <nav class="navbar">
+                <label for="menu"><a href="index.html"><i class="fa-solid fa-circle-arrow-left"></i></a></i></label>
+                 <input type="checkbox" id="menu" class="check">
+            </nav>    
+        </header>
+        
+        <main>
+            <p class="alert-container hidden"></p>    
+            <div >   
+                <div class="linea_subtitulo">
+                    <div class="linea_sub"></div>    
+                    <h3 class="Subtitulo"> Contacto</h3>
+                    <div class="linea_sub"></div>
+                </div>
+    
+                <div class="contacto">
+                    <div class="contacto-container">
+                        <div id="contacto_text">
+                            <h2>Nuestra Dirección:</h2>
+                            <h4><a href="https://goo.gl/maps/6z36FnnmAmSBNE5h8" target="_blank"><i class="fa-solid fa-map-location"></i>  Las Brisas - Valencia</a></h4>
+                            <h4><i style='font-size:16px' class='fas' >&#xf3cd;</i> (+5816) 43766903</h4>
+                            <h4> <i style='font-size:16px' class='far' >&#xf2b6;</i>dulcecerecita@gmail.com  </h4>
+                        </div>         
+                    </div>       
+                
+                    <form class="div-container form-container" >
+    
+                        <div class="form">
+                            <div  class="con_grande">
+                                <label>Nombre</label>
+                                <input type="text" id="name" name="name" placeholder="No usar caracteres especiales">
+                            </div>
+        
+                            <div class="con_grande">
+                                <label >Email</label>
+                                <input type="email" id="email" name="email" placeholder="Aqui va tu email">
+                            </div>            
+                            
+                            <div class="div-pequeño">
+                                <div class="con_pequeño">
+                                <label >Teléfono</label>
+                                <input type="tel" name="telefono" id="telefono" placeholder="Aqui va tu teléfono">
+                            </div>
+        
+                            <div class="con_pequeño" >
+                                <label >Asunto</label>  
+                                <input type="text" name="asunto" id="asunto" placeholder="Aqui va el asunto de tu correo"> 
+                            </div></div>
+        
+                            <div class="con_grande">
+                                <label  >Descripción</label>
+                                <textarea type="Descripción" id="Descripción" name="Descripción" placeholder="Describe tu consulta"></textarea>
+                            </div>
+                        </div>
+                        <div class="div-button">
+                            <button id="registrarse" class="enviar-gmail">ENVIAR</button></a>  
+                        </div>  
+                    </form>
+                </div> </div>
+
+                
+                <footer>        
+                    <h3>Todos los derechos reservados © 2022 - DC&CO</h3>
+                </footer>
+        </main>
+                
+     
+    <script src="./botones.js"></script>
+    </body>
+</html>

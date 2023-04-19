@@ -1,0 +1,849 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+  
+
+@font-face {
+    font-family: "cursiva";
+    src: url(./fonts/OleoScriptSwashCaps-Bold.ttf);    
+}
+
+@font-face {
+    font-family: "inspiration";
+    src: url(./fonts/Inspiration-Regular.ttf);    
+}
+:root {
+    --xlarge:45px;
+    --large: 36px;
+    --medium: 28px;
+    --regular: 20px;
+    --small: 14px;
+    --xsmall: 10px;
+    --turquoise: #45b2ae;
+    --pink: #f397a9;
+    --blue: #20254a;
+    --yellow: #ffdf9e;
+    --darkyellow:hwb(43 42% 0%);
+
+
+}
+
+/*Animación*/
+  
+@keyframes opacity-html {
+    0%{opacity: 1;}  
+    10%{opacity: 0.9;}  
+    20%{opacity: 0.8;}  
+    30%{opacity: 0.7;} 
+    40%{opacity: 0.6;}  
+    50%{opacity: 0.5;}   
+    60%{opacity: 0.4;}  
+    70%{opacity: 0.3;} 
+    80%{opacity: 0.2;}  
+    90%{opacity: 0.1;} 
+    100%{opacity: 0;}
+}
+
+/*Animación Titulos Cards*/
+
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+
+.content {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+}
+
+.content h2 {
+  color: var(--pink);
+  font-size: 4em;
+  margin: 0;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.content h2:nth-child(1) {
+  color: white;
+  border: none;
+}
+
+
+.content h2:nth-child(2) {
+  color: var(--pink);
+  animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 45%,
+      16% 44%,
+      33% 50%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+
+
+
+
+  
+  
+  
+  
+
+
+
+
+/**/
+
+body {   
+    margin: 0;
+    top: 0;
+}
+
+/*Navbar*/
+.navbar {
+    display: flex;
+    padding-inline-end: 40px;
+    align-items: baseline;
+    gap: 40px;
+    height: 80px;
+    
+}
+
+.navbar label {
+    cursor: pointer;
+}
+
+.navbar i {
+    font-size: var(--large);  
+    align-items: center;
+}
+
+.navbar a {
+    font-size: var(--large);
+    text-decoration: none;
+    color: black;
+    font-family: "cursiva";
+}
+
+.navbar a:hover {
+    color: var(--turquoise);
+}
+
+.ul {
+    list-style: none;
+    display: flex;
+    gap: 100px;
+    padding-inline-end: 50px;
+}
+
+
+.header {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    box-shadow: rgba(67, 71, 75, 0.219) 0px 8px 24px;
+    position: fixed;
+    top: 0;    
+    z-index: 1; /* Es para que los elementos no se superpogan */  
+    background-image: linear-gradient(to right, white , var(--pink));
+}
+
+.header img {
+    height: 70px;
+    width: 120px;
+    margin-inline-start: 20px;
+}
+
+
+
+.check {
+    display: none;    
+}
+
+#menu-i {    
+    display: none;
+}
+
+/*Activador Login*/
+.active {
+    transform: translate(0) !important;
+    transition: all 0.2s !important ;
+}
+
+#ul-login {
+    background-image: linear-gradient(to right, white , var(--pink));
+    width: 150px;
+    cursor: pointer;   
+    position: absolute;
+    top: 79px;
+    right: 0;
+    flex-direction: column;
+    text-align: center;
+    padding-block-start: 30px;
+    gap: 40px;
+    height: calc(100vh - 70px);
+    margin: 10px;
+    transform: translateX(200%);
+    transition: all 0.2s;
+    align-items: center;
+    gap: 150px;
+    display: flex;
+    opacity: 0.92;
+    justify-content: center;
+
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/*Hero*/
+
+.hero {
+    margin-top: 90px;
+    height: 500px;
+    width: 100%;    
+    background:  no-repeat url(./img/chef1.png);
+    background-position: top right 30%;
+    color: white;    
+
+}
+
+#fondo {
+    background: url(./img/fondo.png) top/cover no-repeat;
+    height: 500px;
+    margin-top: 90px;
+}
+
+.hero h2 {   
+    align-items: center;
+    padding-inline-start: 60px;
+    font-family: "inspiration";
+    font-size: 60px;
+    word-spacing: 40px; 
+    padding-block-start: 160px;   
+}
+
+.hero p {
+    font-size: var(--regular);
+    padding: 10px;
+    width: 500px;
+    align-items: center;
+    padding-inline-start: 40px;
+    text-align: left;
+}
+
+
+#button_hero {
+    position: absolute;
+    top: 520px;
+    left: 210px;
+    width: 130px;
+    height: 30px;
+    background-image: linear-gradient(to right,  var(--pink), var(--yellow), var(--pink));
+    font-weight: 800;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+}
+
+/*Separadores*/
+
+.linea {    
+    width: 100%;
+    height: 4px;
+    background-image: linear-gradient(to right, var(--turquoise) , var(--pink),  var(--turquoise));
+    margin: 0;
+    padding: 0;
+   
+}
+
+/*Porductos*/
+
+.titulo {
+    font-size: var(--large);
+    font-family: "cursiva";
+    align-items: center;
+    text-align: center;
+}
+
+#productos_list {
+    display: grid;
+    place-content: center;
+    grid-template-columns: 300px 200px 300px 200px;
+    grid-auto-rows: 80px;
+    gap: 15px;   
+    margin-top: 45px;
+    
+}
+
+.productos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 10px;
+       
+}
+
+.productos p {
+    background-image: linear-gradient(to right, var(--turquoise) , var(--pink),  var(--turquoise));
+    border-radius: 1px;
+    width: -webkit-fill-available;
+    height: 36px;
+    text-align: center;
+    font-family: 'cursiva';
+    font-weight: bold;
+    font-size: var(--small);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.productos:nth-child(1) {
+    
+    grid-column: 1/2;
+    grid-row: 1/5;
+    background: url(./img/tortaprin.png) center/cover;
+   
+}
+
+.productos:nth-child(2) {
+    grid-column: 2/3;
+    grid-row: 1/3;
+    background: url(./img/torta1.png) center/cover;
+}
+
+.productos:nth-child(3) {
+    grid-column: 2/3;
+    grid-row: 3/5;
+    background: url(./img/torta2.png) center/cover;
+}
+
+.productos:nth-child(4) {
+    grid-column: 4/5;
+    grid-row: 1/3;
+    background: url(./img/decoracion.png) center/cover;
+}
+
+.productos:nth-child(5) {
+    grid-column: 4/5;
+    grid-row: 3/5;
+    background: url(./img/galleta1.png) center/cover;
+}
+
+.productos:nth-child(6) {
+    grid-column: 3/4;
+    grid-row: 1/5;
+    background: url(./img/torta4.png) center/cover;
+}
+
+#About_us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 20px;
+
+}
+
+.Subtitulo {
+    text-align: center;
+    font-size: var(--medium);
+}
+
+#About_us span {
+    text-align: center;
+    font-size: var(--regular);
+    width: 80%;
+    text-align: justify;
+}
+/* Carro */
+.cart-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 5%;
+    height: max-content;
+    margin-bottom: 0.5rem;
+}
+
+#ul-cart {
+    background-color: #252525d9;
+    width: 100%;
+    cursor: pointer;   
+    position: absolute;
+    top: 79px;
+    right: 0;
+    flex-direction: column;
+    text-align: center;
+    padding-block-start: 30px;
+    height: calc(100vh - 70px);
+    margin: 10px;
+    transform: translateX(200%);
+    transition: all 0.2s;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    z-index: 9;
+
+}
+
+#fondo-pregunta {
+    background-color: #252525d9;
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    z-index: 9;
+    justify-content: center;
+    top: 0;
+}
+
+.cart-container {
+    background: white;
+    width: 300px;
+    height: auto;  
+    padding: 2rem 0.5rem 1rem 2rem;
+    overflow-y: scroll;
+    scroll-margin-block: 20px;
+    max-height: 500px;   
+
+}
+
+.border {
+    border-radius: 0 0 5px 5px; 
+}
+.cart-container-button {
+    background: white;
+    width: 300px;
+    z-index: 1000;
+    padding: 1rem 0.5rem 1rem 2rem;
+    border-radius: 0 0 5px 5px;   
+
+}
+
+.container-absolute {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.cart-container::-webkit-scrollbar  {
+    width: 10px;
+    
+}
+
+.alert-container {
+    position: fixed;
+    background-color: green;
+    height: 45px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    bottom: 0;    
+    z-index: 999;
+
+}
+
+.question-message-absolute {
+    background: white;
+  
+    height: 150px;
+    width: 300px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.cart-container::-webkit-scrollbar-thumb {
+    background: pink;
+    border-radius: 4px;    
+}
+
+
+.container-description {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 60%;
+    align-items: center;
+}
+
+.count-container {
+    display: flex;
+    position: absolute;
+    right: 2.5rem;
+    top: 1rem;
+    color: white;
+    background: black;
+    border-radius: 50%;
+    height: 1rem;
+    width: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-total {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.titulo-product {
+    font-size: 16px;
+    margin: 0px 0 0.3rem 0;
+    text-align: left;
+}
+
+.price-cart {
+    font-size: 13px;
+    color: grey;
+}
+
+.description-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+
+}
+
+.quantity-cart {
+    width: 40%;
+}
+
+.button-sumandsubs {
+    font-size: 14px !important;
+    color: var(--pink);
+    background-color: #f2dadf;
+    border-radius: 50% !important;
+    padding: 2px !important;
+}
+
+.imagen-cart {
+    height: 90px !important;
+    width: 97px !important;
+    margin: 0 !important;
+    
+    border-radius: 4px;
+
+}
+
+/*Menu */
+
+.hidden {
+    display: none !important;
+}
+
+.animation {        
+    animation: opacity-html 0.7s linear;
+}
+
+.hidden-menu {
+    display: flex;
+}
+
+.menu_img {
+    height: 250px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+.div_menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 60px 0;
+    width: 80%;
+    box-shadow: 0px 0px 53px -1px rgba(0,0,0,0.2);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.menu_text {    
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.titulo_menu {
+    text-transform: uppercase;
+    text-decoration: underline;
+
+
+}
+
+.linea_subtitulo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+} 
+
+.linea_sub {
+    height: 3px;
+    background-color: black;
+    width: 400px;
+    margin: 0 40px;
+}
+
+/*Productos */
+
+.precio_producto{
+    color: grey;
+    font-size: var(--small);
+}
+.div-precio{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 10px;
+}
+.button-add {
+    background-image: linear-gradient(to right, var(--turquoise) , var(--pink),  var(--turquoise));
+    border: none;
+    color: white;
+    width: 80%;
+    height: 30px;
+    border-radius: 2px;
+    margin: 0;
+    cursor: pointer;
+}
+.buttons {
+    background-image: linear-gradient(to right, var(--turquoise) , var(--pink), var(--turquoise));
+    border: none;
+    color: white;
+    width: 60%;
+    height: 30px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin: 0.2rem;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.div-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.contenedor-productos-pasteles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contenedor-productos-cupcakes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contenedor-productos-galletas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Cards */
+
+.cards-section{
+    width: 100%;
+    height: 100%;
+}
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card {
+    width: 25%;    
+    height: 500px;  
+    margin: 2rem 0;  
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 5px;    
+    box-shadow: 0px 0px 53px -1px rgba(0,0,0,0.2);
+}
+
+.card:nth-child(1) { 
+    background: url(./img/tortainico.png) center/cover;
+}
+.card:nth-child(2) { 
+    background: url(./img/cupcakes-chocolate.png) center/cover;
+}
+.card:nth-child(3) { 
+    background: url(./img/galletas_de_mantequilla.png) center/cover;
+}
+
+.button-filter {
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/*Servicios */
+
+.servicios {
+    display: flex;
+    flex-direction: row;
+    font-size: var(--regular);
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+}
+
+.servicio {
+    margin-bottom: 60px;
+}
+
+.servicios p {
+    width: 100%;
+    max-width: 600px;
+}
+
+#servi_img {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#servi_img img{
+    width: 250px;
+    height: 200px;
+    border-radius: 10px;
+}
+/*Redes*/
+
+
+
+.redes_ico {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+.redes_ico a {
+    text-decoration: none;
+    color: black;
+}
+
+.redes_ico a i {
+    
+    font-size: var(--xlarge);
+}
+
+#redes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/*Footer*/
+
+footer {
+    background-image: linear-gradient(to right, var(--pink) , var(--yellow),  var(--turquoise), var(--pink));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    background-color: white;
+    margin-top: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 500px;
+    text-align: center;
+
+}
+
+footer h3 {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.footer i {
+    
+    font-size: var(--xlarge);
+}
+
+#medio_pago {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+

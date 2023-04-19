@@ -1,0 +1,541 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+  
+
+@font-face {
+    font-family: "cursiva";
+    src: url(./fonts/OleoScriptSwashCaps-Bold.ttf);    
+}
+
+@font-face {
+    font-family: "inspiration";
+    src: url(./fonts/Inspiration-Regular.ttf);    
+}
+:root {
+    --xlarge:45px;
+    --large: 36px;
+    --medium: 28px;
+    --regular: 20px;
+    --reg_small: 16px;
+    --small: 14px;
+    --xsmall: 10px;
+    --turquoise: #45b2ae;
+    --pink: #f397a9;
+    --blue: #20254a;
+    --yellow: #ffdf9e;
+    --darkyellow:hwb(43 42% 0%);
+
+
+}
+
+
+body {   
+    margin: 0;
+    top: 0;
+}
+
+
+/*Navbar*/
+
+
+.hidden {
+    display: none !important;
+}
+
+.animation {        
+    animation: opacity-html 0.7s linear;
+}
+
+.active {
+display: flex;
+}
+
+.alert-container {
+    position: fixed;
+    background-color: green;
+    height: 45px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    bottom: 0;    
+    z-index: 999;
+
+}
+.navbar {
+    display: flex;
+    padding-inline-end: 40px;
+    align-items: center;
+    gap: 75px;
+    height: 80px;
+    
+}
+
+.navbar label {
+    cursor: pointer;
+}
+
+.navbar i {
+    font-size: var(--large);  
+    align-items: center;
+}
+
+.navbar a {
+    font-size: var(--large);
+    text-decoration: none;
+    color: black;
+    font-family: "cursiva";
+}
+
+.navbar a:hover {
+    color: var(--turquoise);
+}
+
+.header {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    box-shadow: rgba(67, 71, 75, 0.219) 0px 8px 24px;
+    position: fixed;
+    top: 0;    
+    z-index: 1; 
+    background-image: linear-gradient(to right, white , var(--pink));
+}
+
+.header img {
+    height: 70px;
+    width: 120px;
+    margin-inline-start: 20px;
+}
+
+.check {
+    display: none;    
+}
+
+/*Main*/
+
+.linea {    
+    width: 100%;
+    height: 4px;
+    background-image: linear-gradient(to right, var(--turquoise) , var(--pink),  var(--turquoise));
+    margin: 0;
+    padding: 0;
+   
+}
+
+.titulo {
+    font-size: var(--large);
+    font-family: "cursiva";
+    align-items: center;
+    text-align: center;
+}
+
+main {
+    background: url(./img/fondoregis.png);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block-start: 150px;
+    
+}
+.Subtitulo {
+    text-align: center;
+    font-size: var(--large);
+    font-family: "cursiva";
+}
+
+.linea_subtitulo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 99%;
+} 
+
+.linea_sub {
+    height: 1px;
+    background-color: var(--turquoise);
+    width: 36%;
+    margin: 5px;
+}
+
+h4 a {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+/*Formulario*/
+.div-pequeño {
+    width: 90%;
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+}
+
+
+.form-container {
+    width: 50%;
+}
+
+
+.div-button {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+}
+.text_form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 20px;
+    margin-top: 30px;
+    width: 60%;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    font-size: var(--regular);
+}
+
+.form div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;  
+}
+
+.con_grande {
+    
+    width: 90%;
+}
+
+.con_pequeño {
+    width: 43%;
+}
+
+.form input {
+    height: 30px;
+    border-radius: 5px;
+    border-color: rgba(128, 128, 128, 0.356);
+    border-style: solid;
+    font-family: "roboto";
+}
+
+.form textarea {
+    height: 200px;
+    border-color: rgba(128, 128, 128, 0.356);
+    border-style: solid;    
+    font-family: "roboto";
+    border-radius: 5px;
+}
+
+.form input:focus{
+    box-shadow: 1px 1px 30px 3px var(--turquoise);
+    -webkit-box-shadow: 1px 1px 30px 3px var(--turquoise);
+    -moz-box-shadow: 1px 1px 30px 3px var(--turquoise);
+}
+.form textarea:focus{
+    box-shadow: 1px 1px 30px 3px var(--turquoise);
+    -webkit-box-shadow: 1px 1px 30px 3px var(--turquoise);
+    -moz-box-shadow: 1px 1px 30px 3px var(--turquoise);
+}
+
+.form_button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+}
+
+   
+/*Contacto*/
+
+.contacto {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    margin: 30px 0;
+
+}
+
+.contacto h4 i {
+    margin-right: 30px;
+}
+
+.mapa {
+    width: 500px;
+}
+
+#contacto_text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 300px;
+    justify-content: space-between;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+#mapa_height {
+    height: 300px;
+}
+
+
+#registrarse {
+    margin-top: 20px;
+    height: 30px;
+    background-color: var(--blue);
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+    
+
+
+
+
+
+/*Footer*/
+footer {
+    background-image: linear-gradient(to right, var(--pink) , var(--yellow), var(--turquoise), var(--pink));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    margin-top: 180px;
+}
+
+
+
+footer h3 {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        height: 70px;
+    }
+
+    .header img {
+        height: 70px;
+        width: 90px;
+        padding-inline-start: 0;
+    }
+    .navbar a {
+        font-size: var(--medium);
+    }
+
+    main {
+        margin-top: 70px;
+    }
+}
+
+
+
+@media (max-width: 870px) {
+    html {
+        scroll-padding-top: 70px;
+    }
+
+    .header {
+        height: 60px;
+    }
+
+    .header img {
+        height: 60px;
+        width: 80px;
+    }
+
+    .navbar a {
+        font-size: var(--regular);
+    }
+
+    .navbar i {
+        font-size: var(--medium);  
+    }
+
+    /*Main*/
+
+    #contacto_text {
+        width: 205px;
+    }
+
+    .Subtitulo {
+        font-size: var(--medium);
+    }
+
+    .linea_sub {
+        width: 30%;
+    }
+
+    /*Footer*/
+
+    footer h3 {
+        font-size: var(--small);
+    }
+}
+
+
+
+@media (max-width: 590px) {
+
+    html {
+        scroll-padding-top: 90px;
+        height: 100vh;
+    }
+
+    body {
+        height: 100vh;
+    }
+
+    .header img {
+        height: 60px;
+        width: 100px;
+        margin-inline-start: 4px;
+    }
+
+    .navbar {
+        padding-inline-end: 10px;
+        gap: 20px;
+    }
+
+    .navbar i {
+        display: block;
+        padding-inline-end: 30px;
+    }
+
+    /*Main*/
+
+    main{
+        padding-block-start: 180px;
+    }
+
+    .linea_sub {
+        width: 20%;
+    }
+
+    .div_form {
+        width: 70%;
+    }
+
+    
+/*Contacto*/
+.form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form {
+    width: 90%;
+}
+
+.div-container {
+        padding: 0 1rem;
+}
+.con_grande {
+    width: 100%;
+}
+.div-pequeño {
+    width: 100%;
+}
+
+.con_pequeño {
+    width: 45%;
+}
+.contacto {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin: 30px 0;
+    flex-direction: column;
+    justify-content: flex-start
+}
+
+.contacto-container {
+    width: 90%;
+    display: flex;
+    align-items: center ;
+    
+    justify-content: center;
+
+}
+
+#contacto_text {
+    height: auto;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+.contacto h4 i {
+    margin-right: 2px;
+}   
+
+
+ .redes_ico {
+    gap: 60px;
+}
+
+.redes_ico a i {        
+    font-size: var(--medium);
+}
+
+.mapa {
+    width: 150px;
+}
+
+
+#mapa_height {
+    height: 200px;
+}
+
+ 
+#registrarse {
+    margin: 20px 0px;
+    
+}
+
+/*Footer*/
+
+.footer {
+    padding: 2px;
+    width: 290px;
+    font-size: var(--small);
+}
+
+.footer i {        
+    font-size: var(--medium);
+}
+
+footer h3 {
+    font-size: var(--small);
+}
+
+
+
+}
+

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image.png" href="./img/icononav.png">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="mediaquery.css">
+    <title>Integrador</title>
+</head>
+<body>
+
+     <!-- Navbar -->
+    <header class="header">
+        <a href="index.html"><img src="./img/logo-removebg-preview.png" alt="logo"></a>
+       
+
+       <nav class="navbar">
+            <label for="menu" class="check-menu"> <a><i id="menu-i" class="fas fa-bars"></i></a></label>
+
+            <ul class="ul hidden-menu" id="ul-menu">
+                <li> <a href="#menu_prin" scroll-padding-top=90px >Menú</a></li>
+                <li> <a href="#servicio" scroll-padding-top= 90px>Servicios</a></li>
+                <li> <a href="about.html#curso" scroll-padding-top= 90px>Cursos</a></li>
+                <li> <a href="contacto.html" scroll-padding-top= 90px>Contacto</a></li>                  
+            </ul>
+
+            <div class="icons">
+
+                <label for="login" class="check-login"> <a><i class="fa-solid fa-user"></i> </a></label>
+                
+                <ul class="ul hidden" id="ul-login">
+                    <li><a href="registrarse.html">Registrarse</a></li>
+                    <li><a href="ingresar.html">Ingresar</a></li>
+                </ul>
+
+                <label for="cart" class="check-cart"> <a><i class="fa-solid fa-cart-shopping"></i> </a></label>
+                <label class="count-container"></label>
+                
+                
+                <ul class="ul hidden" id="ul-cart">
+                    <div class="container-absolute">
+                        <div class="cart-container"></div>
+                        <div class="cart-container-button hidden ">
+
+                            <div class="container-total">
+                                <p>Total:</p>
+                                <label class="total-carrito"></label>
+                            </div> 
+                            
+                            <button class="button-buy buttons">Comprar</button>
+                            <button class="button-delete buttons"> Eliminar</button>                            
+                        </div>
+                    
+                    </div>
+                    
+                        
+                </ul>
+                
+            </div>
+       </nav>    
+    </header>
+
+    <main>
+            <div  class="question-message hidden" id="fondo-pregunta">
+                <div class="question-message-absolute ">
+                    <h3 class="message"></h3>
+                    <div class="div-buttons">
+                        <button class="button-cancelar buttons">Cancelar</button>
+                    
+                        <button class="button-aceptar buttons">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+            
+        <!-- Esta es la alerta de cuando se agrega un producto al carro, se agrega acá para que al momento de usar la posición tome el total de la página-->
+        <p class="alert-container hidden"></p>
+
+
+         <!-- Hero -->
+        <div id="fondo">
+            <section class="hero">
+                <h2>Chef. Maria Villanueva</h2>        
+                <p>Chef repostera y panadera con mas de 15 años de experiencia en el mercado. Impartiendo cursos como profesora durante mas de 3 años.</p>             
+                <a href="about.html"><button id="button_hero">LEER MAS </button></a>
+           </section>
+        </div> 
+
+         <!-- About Us -->
+       <div class="linea" ></div>
+
+       <h2 class="titulo" id="about">Acerca de Nosotros</h2>
+       <div class="linea" ></div>
+
+       <section id="About_us">
+            
+            <h3 class="Subtitulo">Lunes a Sábado 10 AM - 8 PM</h3>
+            <span>Somos una empresa familiar con más de 15 años de experiencia. Nos especializamos en la producción, distribución y comercialización de pasteles y postres artesanales elaborados con ingredientes de la más alta calidad que nos permiten llegar a tu mesa y compartir contigo nuestro sabor tradicional. </span>
+            <div id="productos_list">
+                <div class="productos"><p>Pasteles con fondant</p></div>
+                <div class="productos"><p>Cupcakes</p></div>
+                <div class="productos"><p>Pasteles Frutales</p></div>
+                <div class="productos"><p>Decoraciones Incluidas</p></div>
+                <div class="productos"><p>Galletas</p></div>
+                <div class="productos"><p>Cualquier diseño que gustes y más..</p></div>            
+            </div>
+       </section>
+
+       <!-- Menu -->
+       <div>
+            <div><div class="linea" ></div>
+            <h2 class="titulo" id="menu_prin"> Menú </h2>
+            <div class="linea" ></div>
+        </div>
+        <!-- Cards de Productos a elegir -->
+
+        <div class="cards-section">
+            <div class="cards-container">
+                <div class="card">
+                   <button class="filter-pasteles button-filter" data-category="pasteles">
+                        <div class="content ">
+                            <h2 class="filter-pasteles">Pasteles</h2>
+                            <h2 class="filter-pasteles">Pasteles</h2>
+                        </div> 
+                    </button>
+                   
+                </div>
+                <div class="card">
+                    
+                
+                    <button class="filter-cupcakes button-filter" data-category="cupcakes">
+                        <div class="content ">
+                            <h2>Cupcakes</h2>
+                            <h2>Cupcakes</h2>
+                        </div> 
+                    </button>
+                </div>
+                <div class="card">
+                    <button class="filter-galletas button-filter" data-category="galletas"> 
+                        <div class="content ">
+                            <h2>Galletas</h2>
+                            <h2>Galletas</h2>
+                        </div> 
+                    </button>
+                </div>
+            </div>
+            
+
+        </div>
+
+                                                    <!-- Productos -->
+       <section >    
+        <!-- Pasteles  -->
+            <section class="hidden pasteles">
+                <div class="linea_subtitulo">
+                    <div class="linea_sub"></div>    
+                    <h3 class="Subtitulo"> Pasteles</h3>
+                    <div class="linea_sub"></div>
+                </div>
+                
+                <div class="contenedor-productos-pasteles">
+                   
+                </div>
+            </section>
+
+             <!-- Cupcakes -->  
+
+           
+            <section class="hidden cupcakes">
+                <div class="linea_subtitulo">
+                    <div class="linea_sub"></div>    
+                    <h3 class="Subtitulo"> Cupcakes</h3>
+                    <div class="linea_sub"></div>
+                </div>
+                           
+               <div class="contenedor-productos-cupcakes"></div>
+            </section>
+
+             <!-- Galletas -->  
+            <section class="hidden galletas">
+                
+             <div class="linea_subtitulo">
+                <div class="linea_sub"></div>    
+                <h3 class="Subtitulo"> Galletas</h3>
+                <div class="linea_sub"></div>
+            </div>
+            <div class="contenedor-productos-galletas"></div>
+            
+
+            </section>
+       </section>
+       </div>
+
+
+       <!-- Servicios -->
+
+       
+       <div class="linea" ></div>
+       <h2 class="titulo" id="servicio"> Servicios </h2> 
+       <div class="linea" ></div>
+
+       <section class="servicio" >
+            <h3 class="Subtitulo">Nuestros Servicios incluyen: </h3>
+            <div class="servicios">
+                <label> <i class="fa-solid fa-cake-candles"></i></label>
+                <p>Pasteles con fondant, crema o ganache de chocolate o ¡Los 3 juntos!</p>
+            </div>
+            <div  class="servicios">
+                <label> <i class="fa-solid fa-cake-candles"></i></label>
+                <p>¡¡¡Pasteles personalizados con la decoración que gustes!!!</p>
+            </div>
+            <div  class="servicios">
+                <label> <i class="fa-solid fa-cake-candles"></i></label>
+                <p>¡Decoraciones como cajas personalizadas y adornos para tu fiesta! </p>
+            </div>
+            <div id="servi_img">
+                <img src="./img/torta14.png" alt="futbol">
+                <img src="./img/torta13.png" alt="minecraft">
+                <img src="./img/decoración2.png" alt="decoracion2">
+                <img src="./img/avenger.png" alt="avengers">
+            </div>
+       </section>
+
+       <section>           
+     
+            
+            
+            <div id="redes">
+                <h3 class="Subtitulo">¡Siguenos!</h3>
+                <div class="redes_ico">
+                    <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                </div>             
+            </div>           
+       </section>
+    </main>
+
+    <footer>
+        <div></div> 
+        <div class="footer">
+            <div id="medio_pago">
+                <label><i class="fa-regular fa-credit-card"></i></label>
+                <label><i class="fa-regular fa-money-bill-1"></i></label>
+                <label><i class="fa-solid fa-money-bill-transfer"></i></label>
+            </div>
+            <h3>Medios de Pago</h3>
+            <p>Tarjeta de Crédito, Débito, Transferencia, Mercado Pago, Efectivo</p>  
+        </div>
+        
+       <h3>Todos los derechos reservados © 2022 - DC&CO</h3>
+    </footer>
+    <script src="./data.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

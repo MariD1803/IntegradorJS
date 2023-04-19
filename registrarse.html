@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="icon" type="image.png" href="./img/icononav.png">
+    <link rel="stylesheet" href="registrarse.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html"><img src="./img/logo-removebg-preview.png" alt="logo"></a>
+       
+ 
+        <nav class="navbar">
+             <label for="menu"><a href="index.html"><i class="fa-solid fa-circle-arrow-left"></i></a></i></label>
+             <input type="checkbox" id="menu" class="check">
+
+             <label for="login"> <a><i class="fa-solid fa-user"></i></a> </label>
+             <input type="checkbox" id="login" class="check">
+             
+             <ul class="ul" id="ul-login">
+                <li> <a href="ingresar.html">¿Estás registrado?</a></li>                
+             </ul>
+        </nav>    
+     </header>
+     <main>        
+        <div id="fondo">
+            <div class="text_form">
+                <div class="linea_subtitulo">
+                    <div class="linea_sub"></div>    
+                    <h3 class="Subtitulo"> Registrate</h3>
+                    <div class="linea_sub"></div>
+                </div>
+                <h3>Puedes registrarte como un usuario del sitio, podras gestionar tus compras, consultas y datos personales completando el formulario a continuación: </h3>
+                <div class="img_form">                    
+                    <label><i class="fa-solid fa-basket-shopping"></i></label>
+                    <label><i class="fa-solid fa-phone"></i></label>
+                    <label><i class="fa-solid fa-user-lock"></i></label>
+                
+                </div>
+            </div>
+            <form target="_blank" >
+
+                <div class="form">
+                    <div  class="con_grande">
+                        <label>Usuario</label>
+                        <input type="text" id="user" name="user" placeholder="No usar caracteres especiales">
+                    </div>
+
+                    <div class="con_grande">
+                        <label >Contraseña</label>
+                        <input type="password" id="password" name="password" placeholder="No mas de 16 caracteres">
+                    </div>            
+                    
+                    <div class="con_pequeño">
+                        <label >Nombre</label>
+                        <input type="text" name="nombre" id="nombre" placeholder="Aqui va tu nombre">
+                    </div>
+
+                    <div class="con_pequeño" >
+                        <label >Apellido</label>  
+                        <input type="text" name="apellido" id="apellido" placeholder="Aqui va tu apellido"> 
+                    </div>
+
+                    <div class="con_grande">
+                        <label  >Email</label>
+                        <input type="email" id="email" name="email" placeholder="Aqui va tu email">
+                    </div>
+
+                    <div class="con_pequeño">
+                        <label >DNI</label>
+                        <input type="text" id="dni" name="dni" placeholder="Aqui va tu DNI">
+                    </div>
+                    <div class="con_pequeño">
+                        <label >Teléfono</label>
+                        <input type="text" id="telefono" name="telefono" placeholder="Aqui va tu telefono">
+                    </div>
+                </div>
+                
+               <div class="form_button">
+                    <div class="checkbox">
+                        <input type="checkbox" name="checkbox">
+                        <label >Deseo recibir información sobre novedades y ofertas</label> <br>
+                        
+                    </div>
+                    <div class="checkbox" >
+                        <div id="captcha">
+                            <input type="checkbox" name="checkbox">                        
+                            <label >No soy un robot</label> <br>
+                            <div id="cap_content" >
+                            <div id="div"></div>
+                            <div><p>reCAPTCHA</p></div>
+                            </div>
+                        
+                        </div>
+                        
+                    </div>  
+                    
+                    <div>
+                        <button id="registrarse"  onclick="window.location.href='./index.html'">REGISTRARSE</button></a>  
+                    </div>  
+               </div>          
+               
+            </form>
+            
+            
+        </div> 
+        
+        <footer>        
+            <h3>Todos los derechos reservados © 2022 - DC&CO</h3>
+         </footer>
+    </main>
+     
+</body>
+</html>
