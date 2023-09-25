@@ -10,6 +10,7 @@
     
     <link rel="icon" type="image.png" href="./img/icononav.png">
     <link rel="stylesheet" href="registrarse.css">
+    <link rel="stylesheet" href="mediaqueryregistrarse.css">
 </head>
 <body>
     <header class="header">
@@ -29,6 +30,7 @@
         </nav>    
      </header>
      <main>        
+        <div class="spinner hidden"><div class="lds-heart hidden"><div></div></div></div>
         <div id="fondo">
             <div class="text_form">
                 <div class="linea_subtitulo">
@@ -102,7 +104,7 @@
                     </div>  
                     
                     <div>
-                        <button id="registrarse"  onclick="window.location.href='./index.html'">REGISTRARSE</button></a>  
+                        <button id="registrarse-person" >REGISTRARSE</button></a>  
                     </div>  
                </div>          
                
@@ -114,6 +116,13 @@
         <footer>        
             <h3>Todos los derechos reservados © 2022 - DC&CO</h3>
          </footer>
+         
+
+         <p class="alert-container hidden"></p>
+
+         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>    
+         <script src="./ajaxController.js"></script>
+        <script src="registrarse.js"></script>
     </main>
      
 </body>

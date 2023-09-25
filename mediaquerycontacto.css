@@ -1,0 +1,308 @@
+
+
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        height: 70px;
+    }
+
+    .header img {
+        height: 70px;
+        width: 90px;
+        padding-inline-start: 0;
+    }
+    .navbar a {
+        font-size: var(--medium);
+    }
+
+    main {
+        margin-top: 70px;
+    }
+
+     /*Spinner*/
+  .lds-heart div {
+    
+    width: 50px;
+    height: 50px;
+    
+  }
+  .lds-heart div:after,
+  .lds-heart div:before {
+    
+    width: 50px;
+    height: 50px;
+   
+  }
+  .lds-heart div:before {
+    left: -24px;
+    
+  }
+  .lds-heart div:after {
+    top: -24px;
+  }   
+
+}
+
+
+
+@media (max-width: 870px) {
+    html {
+        scroll-padding-top: 70px;
+    }
+
+    .header {
+        height: 60px;
+    }
+
+    .header img {
+        height: 60px;
+        width: 80px;
+    }
+
+    .navbar a {
+        font-size: var(--regular);
+    }
+
+    .navbar i {
+        font-size: var(--medium);  
+    }
+
+    /*Main*/
+
+    #contacto_text {
+        width: 205px;
+    }
+
+    .Subtitulo {
+        font-size: var(--medium);
+    }
+
+    .linea_sub {
+        width: 30%;
+    }
+
+    /*Footer*/
+
+    footer h3 {
+        font-size: var(--small);
+    }
+
+    /*Spinner*/
+    .lds-heart-active{
+        top: 70px;
+     }
+  .lds-heart div {
+    
+    width: 40px;
+    height: 40px;
+    
+  }
+  .lds-heart div:after,
+  .lds-heart div:before {
+    
+    width: 40px;
+    height: 40px;
+   
+  }
+  .lds-heart div:before {
+    left: -30px;
+    
+  }
+  .lds-heart div:after {
+    top: -30px;
+  }   
+}
+
+
+
+@media (max-width: 590px) {
+
+    html {
+        scroll-padding-top: 90px;
+        height: 100vh;
+    }
+
+    body {
+        height: 100vh;
+    }
+
+    .header img {
+        height: 60px;
+        width: 100px;
+        margin-inline-start: 4px;
+    }
+
+    .navbar {
+        padding-inline-end: 10px;
+        gap: 20px;
+    }
+
+    .navbar i {
+        display: block;
+        padding-inline-end: 30px;
+    }
+
+    /*Main*/
+
+    main{
+        padding-block-start: 180px;
+    }
+
+    .linea_sub {
+        width: 20%;
+    }
+
+    .div_form {
+        width: 70%;
+    }
+
+    
+/*Contacto*/
+.form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form {
+    width: 90%;
+}
+
+.div-container {
+        padding: 0 1rem;
+}
+.con_grande {
+    width: 100%;
+}
+.div-pequeño {
+    width: 100%;
+}
+
+.con_pequeño {
+    width: 45%;
+}
+.contacto {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin: 30px 0;
+    flex-direction: column;
+    justify-content: flex-start
+}
+
+.contacto-container {
+    width: 90%;
+    display: flex;
+    align-items: center ;
+    
+    justify-content: center;
+
+}
+
+#contacto_text {
+    height: auto;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+.contacto h4 i {
+    margin-right: 2px;
+}   
+
+
+ .redes_ico {
+    gap: 60px;
+}
+
+.redes_ico a i {        
+    font-size: var(--medium);
+}
+
+.mapa {
+    width: 150px;
+}
+
+
+#mapa_height {
+    height: 200px;
+}
+
+ 
+#registrarse {
+    margin: 20px 0px;
+    
+}
+
+/*Footer*/
+
+.footer {
+    padding: 2px;
+    width: 290px;
+    font-size: var(--small);
+}
+
+.footer i {        
+    font-size: var(--medium);
+}
+
+footer h3 {
+    font-size: var(--small);
+}
+
+/*Spinner*/
+.lds-heart-active{
+    top: 90px !important;
+ }
+
+.lds-heart-active {
+       
+    width: 100%;
+    
+    padding-block-start: 0px;
+    height: 100%;
+}
+.lds-heart {
+    display: inline-block;
+    position: absolute;
+    /* top: 50%; */
+    width: 100px;
+    height: 100px;
+    transform: rotate(45deg);
+    left: 42%;
+    
+}
+.lds-heart div {
+    
+    width: 30px;
+    height: 30px;
+    
+}
+.lds-heart div:after,
+.lds-heart div:before {
+    
+    width: 30px;
+    height: 30px;
+
+}
+.lds-heart div:before {
+    left: -15px;
+    
+}
+.lds-heart div:after {
+    top: -15px;
+}   
+
+
+
+@media (max-width: 360px) {
+    .lds-heart {
+        
+        left: 38%;
+      }
+}
+
+}
+

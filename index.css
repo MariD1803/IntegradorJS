@@ -112,6 +112,84 @@ html::-webkit-scrollbar {
 
 
 
+/*Spinner*/
+
+.lds-heart-active {
+    background-color: #252525ed;
+    cursor: none;
+    width: 100%;
+    position: fixed;
+    right: 0;
+    flex-direction: column;
+    text-align: center;
+    padding-block-start: 30px;
+    height: calc(100vh - 80px);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    z-index: 9;
+}
+  .lds-heart {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    transform: rotate(45deg);
+    transform-origin: 40px 40px;
+    left: 50%;
+  }
+  .lds-heart div {
+    top: 32px;
+    left: 32px;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #fcf;
+    animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  .lds-heart div:after,
+  .lds-heart div:before {
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: #fcf;
+  }
+  .lds-heart div:before {
+    left: -36px;
+    border-radius: 50% 0 0 50%;
+  }
+  .lds-heart div:after {
+    top: -36px;
+    border-radius: 50% 50% 0 0;
+  }
+  @keyframes lds-heart {
+    0% {
+      transform: scale(0.95);
+    }
+    5% {
+      transform: scale(1.1);
+    }
+    39% {
+      transform: scale(0.85);
+    }
+    45% {
+      transform: scale(1);
+    }
+    60% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(0.9);
+    }
+  }
+  
+
+
+
+
 
   
   
@@ -398,6 +476,26 @@ body {
     text-align: justify;
 }
 /* Carro */
+
+
+.active-error {
+    position: absolute;
+    transform: translate(0) !important;
+    transition: all 0.2s !important;
+    background-color: red !important;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    align-items: center;
+    margin-top: 10px;
+    padding: 0;
+    bottom: 0;
+}
+
 .cart-item {
     display: flex;
     flex-direction: row;
@@ -405,6 +503,10 @@ body {
     gap: 5%;
     height: max-content;
     margin-bottom: 0.5rem;
+}
+
+.cart-empty {
+    font-size: 24px;
 }
 
 #ul-cart {
@@ -587,7 +689,7 @@ body {
 }
 
 .animation {        
-    animation: opacity-html 0.7s linear;
+    animation: opacity-html 0.6s linear;
 }
 
 .hidden-menu {

@@ -1,4 +1,4 @@
-const baseDeDatos = [
+/* const baseDeDatos = [
     {
         id: '1TortaChocolate',
         nombre: 'Chocolate',
@@ -7,7 +7,7 @@ const baseDeDatos = [
         sabor: 'Biscocho de Chocolate',
         topping: 'Topping de Trufas de Chocolate y Fresas' ,
         relleno: 'Ganache de Chocolate',
-        categoria: 'pasteles',
+        categoria: 'Pastel',
 
     },
     {
@@ -18,7 +18,7 @@ const baseDeDatos = [
         sabor: 'Biscocho de Vainilla',
         topping: 'Topping de Fresas' ,
         relleno: 'Crema de Vainilla',
-        categoria: 'pasteles',
+        categoria: 'Pastel',
     },
     {
         id: "3TortadeDurazno",
@@ -28,7 +28,7 @@ const baseDeDatos = [
         sabor: 'Biscocho de Vainilla',
         topping: 'Topping de Duraznos' ,
         relleno: 'Crema de Vainilla ',
-        categoria: 'pasteles',
+        categoria: 'Pastel',
     },
     {
         id: "4MousedeChocolate",
@@ -38,7 +38,7 @@ const baseDeDatos = [
         sabor: 'Mouse de Chocolate ',
         topping: 'Topping de Chocolate' ,
         relleno: 'Ganache de Chocolate',
-        categoria: 'pasteles',
+        categoria: 'Pastel',
     },
 
     {
@@ -49,7 +49,7 @@ const baseDeDatos = [
         sabor: 'Mouse de Maracuya',
         topping: 'Topping de Maracuya' ,
         relleno: 'Crema de Vainilla ',
-        categoria: 'pasteles',
+        categoria: 'Pastel',
     },
     {
         id:"6TortadeTiramisu",
@@ -59,7 +59,7 @@ const baseDeDatos = [
         sabor: 'Biscocho de café ',
         topping: 'Topping de Café y Cacao ' ,
         relleno: 'Frosting de Queso Crema ',
-        categoria: 'pasteles',
+        categoria: 'Pastel',
     },
     {
         id: "7CupcakeVainilla",
@@ -69,7 +69,7 @@ const baseDeDatos = [
         sabor: 'Biscocho de Vainilla',
         topping: 'Toping de Rocklets' ,
         relleno: 'Crema de Vainilla',
-        categoria: 'cupcakes',
+        categoria: 'Cupcake',
 
     },
     {
@@ -80,7 +80,7 @@ const baseDeDatos = [
         sabor: 'Biscocho de Chocolate',
         topping: 'Topping de Chocolate' ,
         relleno: 'Crema de Chocolate',
-        categoria: 'cupcakes',
+        categoria: 'Cupcake',
     },
     {
         id:"9CupcakeGalleta",
@@ -90,7 +90,7 @@ const baseDeDatos = [
         sabor: 'Biscocho de Vainilla y Oreo',
         topping: 'Toping de Galleta ChocoChips' ,
         relleno: 'Crema de Vainilla ',
-        categoria: 'cupcakes',
+        categoria: 'Cupcake',
     },
     {
         id: "10CupcakeFresa",
@@ -100,7 +100,7 @@ const baseDeDatos = [
         sabor: 'Biscocho de Vainilla y Fresas',
         topping: 'Toping de Fresas' ,
         relleno: 'Crema de Vainilla',
-        categoria: 'cupcakes',
+        categoria: 'Cupcake',
     },
 
     {
@@ -111,7 +111,7 @@ const baseDeDatos = [
         sabor: 'Biscocho de Chocolate y Almendras',
         topping: 'Toping de Sirope de Chocolate y Almendras' ,
         relleno: 'Crema de Vainilla y Almendras',
-        categoria: 'cupcakes',
+        categoria: 'Cupcake',
     },
     {
         id: "12CupcakeZanahoria",
@@ -121,7 +121,7 @@ const baseDeDatos = [
         sabor: 'Biscocho de Vainilla y Zanahoria ',
         topping: 'Toping de Fondant en Froma de Zanahoria' ,
         relleno: 'Frosting de Queso Crema',
-        categoria: 'cupcakes',
+        categoria: 'Cupcake',
     },
     {
         id: "13GalletaChocochip",
@@ -131,7 +131,7 @@ const baseDeDatos = [
         sabor: 'Galleta de Vainilla',
         topping: 'Cubierta de Chips de Chocolate' ,
         relleno: '',
-        categoria: 'galletas',
+        categoria: 'Galleta',
     },
     {
         id: "14GalletaVainillaRedonda",
@@ -141,7 +141,7 @@ const baseDeDatos = [
         sabor: '',
         topping: 'Pikachu' ,
         relleno: 'Hello Kitty',
-        categoria: 'galletas',
+        categoria: 'Galleta',
     },
     {
         id: "15GalletaVainillaCuadrada",
@@ -151,7 +151,7 @@ const baseDeDatos = [
         sabor: 'Esqueleto',
         topping: 'TNT' ,
         relleno: 'Creeper',
-        categoria: 'galletas',
+        categoria: 'Galleta',
     },
     {
         id: "16GalletaRocklets",
@@ -161,7 +161,7 @@ const baseDeDatos = [
         sabor: 'Galleta de Vainilla',
         topping: 'Cubierta de Rocklest' ,
         relleno: '',
-        categoria: 'galletas',
+        categoria: 'Galleta',
     },
     {
         id: "17GalletaMembrillo",
@@ -171,7 +171,7 @@ const baseDeDatos = [
         sabor: 'Galleta de Vainilla',
         topping: 'Relleno de Membrillo' ,
         relleno: '',
-        categoria: 'galletas',
+        categoria: 'Galleta',
     },
     {
         id: "18GalletaHersheys",
@@ -181,7 +181,7 @@ const baseDeDatos = [
         sabor: 'Galleta de Chocolate',
         topping: 'Cubierta de Hersheys' ,
         relleno: '',
-        categoria: 'galletas',
+        categoria: 'Galleta',
     },
     {
         id:"19TortadeSelvaNegra",
@@ -191,10 +191,11 @@ const baseDeDatos = [
         sabor: 'Biscocho de Vainilla ',
         topping: 'Topping de Chcolate y Cerezas ' ,
         relleno: 'Crema de Chocolate',
-        categoria: 'pasteles',
+        categoria: 'Pastel',
     },
 
 ];
 
 
 
+ */

@@ -80,11 +80,37 @@
         border-radius: 5px;    
         box-shadow: 0px 0px 53px -1px rgba(0,0,0,0.2);
     }
+
+        /*Spinner*/
+  .lds-heart div {
+    
+    width: 50px;
+    height: 50px;
+    
+  }
+  .lds-heart div:after,
+  .lds-heart div:before {
+    
+    width: 50px;
+    height: 50px;
+   
+  }
+  .lds-heart div:before {
+    left: -24px;
+    
+  }
+  .lds-heart div:after {
+    top: -24px;
+  }   
+
+
+
+}
       
     
 
 
-}
+
 
 
 
@@ -277,7 +303,28 @@
     .redes_ico a i {        
         font-size: var(--large);
     }
+
+    /*Spinner*/
+  .lds-heart div {
     
+    width: 40px;
+    height: 40px;
+    
+  }
+  .lds-heart div:after,
+  .lds-heart div:before {
+    
+    width: 40px;
+    height: 40px;
+   
+  }
+  .lds-heart div:before {
+    left: -30px;
+    
+  }
+  .lds-heart div:after {
+    top: -30px;
+  }   
 
 
 
@@ -285,6 +332,8 @@
 
 
 @media (max-width: 590px) {
+
+    
     html {
         scroll-padding-top: 90px;
     }
@@ -354,6 +403,8 @@
         transition: all 0.2s !important;
     }
 
+    
+
     /*Activador Login*/
 
 
@@ -420,6 +471,49 @@
         flex-direction: row;
         justify-content: space-around;
     }
+
+     /*Spinner*/
+     .lds-heart-active{
+        top: 70px !important;
+     }
+
+     .lds-heart-active {
+       
+        width: 100%;
+        
+        padding-block-start: 0px;
+        height: 100%;
+    }
+    .lds-heart {
+        display: inline-block;
+        position: absolute;
+        /* top: 50%; */
+        width: 100px;
+        height: 100px;
+        transform: rotate(45deg);
+        left: 42%;
+        
+    }
+    .lds-heart div {
+        
+        width: 30px;
+        height: 30px;
+        
+    }
+    .lds-heart div:after,
+    .lds-heart div:before {
+        
+        width: 30px;
+        height: 30px;
+    
+    }
+    .lds-heart div:before {
+        left: -15px;
+        
+    }
+    .lds-heart div:after {
+        top: -15px;
+    }   
 
     /*Hero*/
     #fondo {

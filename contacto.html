@@ -9,8 +9,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />        
         <link rel="icon" type="image.png" href="./img/icononav.png">
         <link rel="stylesheet" href="contacto.css">
+        <link rel="stylesheet" href="mediaquerycontacto.css">
     </head>
     <body>
+        <div class="spinner hidden"><div class="lds-heart hidden"><div></div></div></div>
         <header class="header">
             <a href="index.html"><img src="./img/logo-removebg-preview.png" alt="logo"></a>
        
@@ -66,7 +68,7 @@
         
                             <div class="con_grande">
                                 <label  >Descripción</label>
-                                <textarea type="Descripción" id="Descripción" name="Descripción" placeholder="Describe tu consulta"></textarea>
+                                <textarea type="Descripción" id="descripcion" name="Descripción" placeholder="Describe tu consulta"></textarea>
                             </div>
                         </div>
                         <div class="div-button">
@@ -80,8 +82,9 @@
                     <h3>Todos los derechos reservados © 2022 - DC&CO</h3>
                 </footer>
         </main>
-                
-     
-    <script src="./botones.js"></script>
+               
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>    
+    <script src="./ajaxController.js"></script>
+    <script src="./contacto.js"></script>
     </body>
 </html>

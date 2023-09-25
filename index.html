@@ -34,12 +34,14 @@
                 <label for="login" class="check-login"> <a><i class="fa-solid fa-user"></i> </a></label>
                 
                 <ul class="ul hidden" id="ul-login">
-                    <li><a href="registrarse.html">Registrarse</a></li>
-                    <li><a href="ingresar.html">Ingresar</a></li>
+                    <li class="registrarse hidden"><a href="registrarse.html">Registrarse</a></li>
+                    <li class="ingresar hidden"><a href="ingresar.html">Iniciar Sección</a></li>
+                    <li class="ordenes hidden"><a href="ordenes.html">Ordenes de Compra</a></li>
+                    <li class="logout hidden"><a>Cerrar Sección</a></li>
                 </ul>
 
-                <label for="cart" class="check-cart"> <a><i class="fa-solid fa-cart-shopping"></i> </a></label>
-                <label class="count-container"></label>
+                <label for="cart" class="check-cart hidden"> <a><i class="fa-solid fa-cart-shopping"></i> </a></label>
+                <label class="count-container hidden"></label>
                 
                 
                 <ul class="ul hidden" id="ul-cart">
@@ -66,6 +68,9 @@
     </header>
 
     <main>
+
+        <div class="spinner hidden"><div class="lds-heart hidden"><div></div></div></div>
+
             <div  class="question-message hidden" id="fondo-pregunta">
                 <div class="question-message-absolute ">
                     <h3 class="message"></h3>
@@ -73,6 +78,17 @@
                         <button class="button-cancelar buttons">Cancelar</button>
                     
                         <button class="button-aceptar buttons">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div  class="question-message-compra hidden" id="fondo-pregunta">
+                <div class="question-message-absolute ">
+                    <h3 class="message-compra"></h3>
+                    <div class="div-buttons">
+                        <button class="button-cancelar buttons">Cancelar</button>
+                    
+                        <button class="button-aceptar-compra buttons">Aceptar</button>
                     </div>
                 </div>
             </div>
@@ -121,7 +137,7 @@
         <div class="cards-section">
             <div class="cards-container">
                 <div class="card">
-                   <button class="filter-pasteles button-filter" data-category="pasteles">
+                   <button class="filter-pasteles button-filter" data-category="Pastel">
                         <div class="content ">
                             <h2 class="filter-pasteles">Pasteles</h2>
                             <h2 class="filter-pasteles">Pasteles</h2>
@@ -132,7 +148,7 @@
                 <div class="card">
                     
                 
-                    <button class="filter-cupcakes button-filter" data-category="cupcakes">
+                    <button class="filter-cupcakes button-filter" data-category="Cupcake">
                         <div class="content ">
                             <h2>Cupcakes</h2>
                             <h2>Cupcakes</h2>
@@ -140,7 +156,7 @@
                     </button>
                 </div>
                 <div class="card">
-                    <button class="filter-galletas button-filter" data-category="galletas"> 
+                    <button class="filter-galletas button-filter" data-category="Galleta"> 
                         <div class="content ">
                             <h2>Galletas</h2>
                             <h2>Galletas</h2>
@@ -254,6 +270,8 @@
         
        <h3>Todos los derechos reservados © 2022 - DC&CO</h3>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./ajaxController.js"></script>
     <script src="./data.js"></script>
     <script src="./index.js"></script>
 </body>

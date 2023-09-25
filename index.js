@@ -1,3 +1,6 @@
+const ajaxController = new AJAXController();
+
+//Productos 
 const productPasteles = document.querySelector('.pasteles')
 const productCupcakes = document.querySelector('.cupcakes')
 const productGalletas = document.querySelector('.galletas')
@@ -7,12 +10,14 @@ const filterGalletas = document.querySelector('.filter-galletas')
 const productosContenedorPasteles = document.querySelector('.contenedor-productos-pasteles');
 const productosContenedorCupcakes = document.querySelector('.contenedor-productos-cupcakes');
 const productosContenedorGalletas = document.querySelector('.contenedor-productos-galletas');
+//Botones de los menus
 const ulLogin = document.querySelector('#ul-login');
 const checkLogin = document.querySelector('.check-login')
 const ulCart = document.querySelector('#ul-cart');
 const checkCart = document.querySelector('.check-cart')
 const ulMenu = document.querySelector('#ul-menu');
 const checkMenu = document.querySelector('.check-menu')
+//Carro
 const cartContainer = document.querySelector('.cart-container')
 const addQuantity = document.querySelector('.add-quantity')
 const subsQuantity = document.querySelector('.subs-quantity')
@@ -22,31 +27,132 @@ const cartContainerButton = document.querySelector('.cart-container-button')
 const buttonDelete = document.querySelector('.button-delete')
 const alertContainer = document.querySelector('.alert-container')
 const questionMessage = document.querySelector('.question-message')
+const questionMessageCompra = document.querySelector('.question-message-compra')
 const messageContainer = document.querySelector('.message')
+const messageContainerCompra = document.querySelector('.message-compra')
 const buttonBuy = document.querySelector('.button-buy')
 const buttonCancelar = document.querySelector('.button-cancelar')
 const buttonAceptar = document.querySelector('.button-aceptar')
+const buttonAceptarCompra = document.querySelector('.button-aceptar-compra')
+//opciones de ingreso y Logout
+const buttonIngresar = document.querySelector('.ingresar')
+const buttonRegistrarse = document.querySelector('.registrarse')
+const buttonLogOut = document.querySelector('.logout')
+const buttonOrdenes = document.querySelector('.ordenes')
+//Spinner
+const spinnerContainer = document.querySelector(".spinner")
+const spinner = document.querySelector(".lds-heart")
 
+//   Traer productos de la DB 
 
+const getProductos = (data = {}) => {
+    entity = "producto"
+    return ajaxController.get(entity,data)
+}
+
+// Datos del localstorage
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+let user = JSON.parse(localStorage.getItem('usuario')) || null;
+let total = JSON.parse(localStorage.getItem('total')) || 0;
+
+// Guardar el carro localstorage
+
 const saveLocalStorage = cartLleno => {
     localStorage.setItem('cart', JSON.stringify(cartLleno));
 };
+const saveLocalStorageTotal = totalCarro => {
+    localStorage.setItem('total', JSON.stringify(totalCarro));
+};
+
+
+// Verificar usuario logeado
+
+const verifyUser = () => {
+    if(!user){
+        buttonIngresar.classList.add('active');
+        buttonIngresar.classList.remove('hidden')
+        buttonRegistrarse.classList.add('active');
+        buttonRegistrarse.classList.remove('hidden')
+        buttonLogOut.classList.remove('active');
+        buttonLogOut.classList.add('hidden')
+        buttonOrdenes.classList.remove('active');
+        buttonOrdenes.classList.add('hidden')
+        checkCart.classList.remove('active');
+        checkCart.classList.add('hidden')
+        countContainer.classList.remove("active")
+        countContainer.classList.add("hidden")
+
+        return;
+    }
+    if(user){
+        buttonIngresar.classList.remove('active');
+        buttonIngresar.classList.add('hidden')
+        checkCart.classList.remove('hidden');
+        checkCart.classList.add('active')
+        buttonRegistrarse.classList.add('hidden');
+        buttonRegistrarse.classList.remove('active')
+        buttonLogOut.classList.add('active');
+        buttonLogOut.classList.remove('hidden')
+        buttonOrdenes.classList.add('active');
+        buttonOrdenes.classList.remove('hidden')
+        countContainer.classList.add("active")
+        countContainer.classList.remove("hidden")
+
+
+        return;
+    }
+}
+
+
+//Spinner 
+
+
+const spinnerActive =()=> {
+    setTimeout(()=>{
+       spinnerContainer.classList.add("lds-heart-active")
+       spinnerContainer.classList.remove('hidden')
+       spinner.classList.remove('hidden')
+
+    },)
+}
+
+const spinnerDeactive = () => {
+    setTimeout(()=>{
+        spinnerContainer.classList.remove("lds-heart-active")
+        spinnerContainer.classList.add('hidden')
+        spinner.classList.add('hidden')
+    },"900")
+}
+
+
+
+
+
+
+
+
+
+// Crear producto desde DB
 
 const crearProducto = product => {
-    const {id, nombre, sabor, topping, relleno, imagen, precio} = product; 
+    const {id, nombre, sabor, topping, relleno, imagen, precio, categoria} = product; 
     return `
     <div class="div_menu">
         <div  class="menu_text">
-            <h3 class="titulo_menu">${nombre}</h3>
+            <h3 class="titulo_menu">${nombre}</h3> 
+            <p class="hidden">${categoria}</p>           
             <p>${sabor}<br>${relleno}<br>${topping}</p>
             <div class="div-precio"><p>Precio: </p><p class="precio_producto">$${precio}</p></div>
             <button class="button-add"
             data-id='${id}'
             data-nombre='${nombre}'
             data-precio='${precio}'
-            data-imagen='${imagen}'>Agregar al Carrito</button>
+            data-imagen='${imagen}'
+            data-categoria='${categoria}'
+            data-sabor='${sabor}'
+            >Agregar al Carrito</button>
         </div>                
         <img src=${imagen} alt="imagen-producto"  class="menu_img">
     </div>
@@ -55,18 +161,16 @@ const crearProducto = product => {
 }
 
 const renderizarProductos = (Datos, contenedor) => {
-    
     contenedor.innerHTML = Datos.map(crearProducto).join('');
 }
 
 const mostrarProductos= e => {
-    if (e.target.dataset.category  == "pasteles") {
-
-    
+    if (e.target.dataset.category  == "Pastel") {
     
         if (productPasteles.classList.contains('active')) {
             productPasteles.classList.remove('active');
-            productPasteles.classList.add('hidden')
+            productPasteles.classList.add('hidden')            
+            spinnerDeactive()
             return;
         }
         if (productCupcakes.classList.contains('active') || productGalletas.classList.contains('active')) {
@@ -77,23 +181,62 @@ const mostrarProductos= e => {
 
             productPasteles.classList.remove('hidden')
             productPasteles.classList.add('active')            
-            let pasteles = baseDeDatos.filter(item => item.categoria === 'pasteles')
-            renderizarProductos(pasteles, productosContenedorPasteles);
+            spinnerActive()
+
+            let pasteles = getProductos(
+                {
+                    "categoria":"Pastel"
+                }
+            ).then(
+                (response)=>{
+                   
+                    renderizarProductos(response.data, productosContenedorPasteles)                    
+                    spinnerDeactive()
+                },
+                (error) => {
+                                        
+                    spinnerDeactive()
+                    console.log(error)
+                }
+            )
+            renderizarProductos(pasteles, productosContenedorPasteles);            
+            spinnerDeactive()
             return;
         }
         
         productPasteles.classList.remove('hidden')
-        productPasteles.classList.add('active')
-        let pasteles = baseDeDatos.filter(item => item.categoria === 'pasteles')
-        renderizarProductos(pasteles, productosContenedorPasteles);
+        productPasteles.classList.add('active')        
+        spinnerActive(0)        
+        
+        let pasteles = getProductos(
+            {
+                "categoria":"Pastel"
+            }
+        ).then(
+            (response)=>{
+               
+                renderizarProductos(response.data, productosContenedorPasteles)                
+                spinnerDeactive()
+            },
+            (error) => {
+                
+                console.log(error)                
+                spinnerDeactive()
+            }
+        )
+        renderizarProductos(pasteles, productosContenedorPasteles);        
+        spinnerDeactive()
 
     }
-    if (e.target.dataset.category  == "cupcakes") {
+
+
+    if (e.target.dataset.category  == "Cupcake") {
        
     
         if (productCupcakes.classList.contains('active')) {
             productCupcakes.classList.remove('active');
-            productCupcakes.classList.add('hidden')
+            productCupcakes.classList.add('hidden')            
+            spinnerDeactive()
             return;
         }
         if (productPasteles.classList.contains('active') || productGalletas.classList.contains('active')) {
@@ -104,24 +247,59 @@ const mostrarProductos= e => {
 
             productCupcakes.classList.remove('hidden')
             productCupcakes.classList.add('active')
-            let cupcakes = baseDeDatos.filter(item => item.categoria === 'cupcakes')            
+            spinnerActive()
+
+            let cupcakes = getProductos(
+                {
+                    "categoria":"Cupcake"
+                }
+            ).then(
+                (response)=>{
+                                       
+                    spinnerDeactive()
+                    renderizarProductos(response.data, productosContenedorCupcakes)
+                },
+                (error) => {
+                    
+                    console.log(error)                    
+                    spinnerDeactive()
+                }
+            )          
             renderizarProductos(cupcakes, productosContenedorCupcakes);
+            spinnerDeactive()
             return;
         }
         
         productCupcakes.classList.remove('hidden')
         productCupcakes.classList.add('active')
-        let cupcakes = baseDeDatos.filter(item => item.categoria === 'cupcakes')
-    
+        spinnerActive()
+        let cupcakes = getProductos(
+            {
+                "categoria":"Cupcake"
+            }
+        ).then(
+            (response)=>{
+               
+                renderizarProductos(response.data, productosContenedorCupcakes)
+                spinnerDeactive()
+            },
+            (error) => {
+                
+                console.log(error)                
+                spinnerDeactive()
+            }
+        )          
         renderizarProductos(cupcakes, productosContenedorCupcakes);
+        spinnerDeactive()
 
     }
-    if (e.target.dataset.category  == "galletas") {
+    if (e.target.dataset.category  == "Galleta") {
        
     
         if (productGalletas.classList.contains('active')) {
             productGalletas.classList.remove('active');
-            productGalletas.classList.add('hidden')
+            productGalletas.classList.add('hidden')            
+            spinnerDeactive()
             return;
         }
         if (productPasteles.classList.contains('active') || productCupcakes.classList.contains('active')) {
@@ -131,16 +309,51 @@ const mostrarProductos= e => {
             productCupcakes.classList.add('hidden')
 
             productGalletas.classList.remove('hidden')
-            productGalletas.classList.add('active')
-            let galletas = baseDeDatos.filter(item => item.categoria === 'galletas')            
+            productGalletas.classList.add('active')  
+            spinnerActive()      
+            let galletas = getProductos(
+                {
+                    "categoria":"Galleta"
+                }
+            ).then(
+                (response)=>{
+                   
+                    renderizarProductos(response.data, productosContenedorGalletas)
+                    spinnerDeactive()
+                },
+                (error) => {
+                    
+                    console.log(error)                    
+                    spinnerDeactive()
+                }
+            )          
             renderizarProductos(galletas, productosContenedorGalletas);
+            spinnerDeactive()
             return;
         }
         
         productGalletas.classList.remove('hidden')
         productGalletas.classList.add('active')
-        let galletas = baseDeDatos.filter(item => item.categoria === 'galletas')            
+        spinnerActive()
+
+        let galletas = getProductos(
+            {
+                "categoria":"Galleta"
+            }
+        ).then(
+            (response)=>{
+               
+                renderizarProductos(response.data, productosContenedorGalletas)                
+                spinnerDeactive()
+            },
+            (error) => {
+                
+                console.log(error)                
+                spinnerDeactive()
+            }
+        )          
         renderizarProductos(galletas, productosContenedorGalletas);
+        spinnerDeactive()
 
     }
    
@@ -230,13 +443,16 @@ const cerrarAlScrollear = () => {
 /* Logica carro */
 
 const renderProductCart = cartProduct => {
-    const { id, nombre, precio, imagen, quantity } = cartProduct; 
+    const { id, nombre,sabor,categoria, precio, imagen, quantity } = cartProduct; 
     return `
     <div class="cart-item" data-id=${id}>
         <img src=${imagen} alt="imagen-product" class="imagen-cart"/>
         <div class="container-description"> 
             <div class="description-cart">
+                         
+                <h3 class="titulo-product" >${categoria} de</h3>
                 <h3 class="titulo-product" >${nombre}</h3>
+                <h3 class="hidden" >${sabor}</h3>   
                 <span class="price-cart">$${precio}</span>
             </div>
             <div class="quantity-cart">
@@ -258,8 +474,19 @@ const renderAlert = () => {
         alertContainer.classList.remove('active')
         alertContainer.classList.add('animation')
         alertContainer.classList.add('hidden')
-    }, "700");
+    }, "600");
 }
+
+const renderErrorAlert = () => {
+    alertContainer.classList.remove('hidden')
+    alertContainer.classList.add('active-error')
+    setTimeout(() => {        
+        alertContainer.classList.remove('active-error')
+        alertContainer.classList.add('animation')
+        alertContainer.classList.add('hidden')
+    }, "2000");
+}
+
 
 
 
@@ -299,7 +526,7 @@ const renderCart = () => {
         cartContainerButton.classList.remove('active')
         cartContainerButton.classList.add('hidden')
         cartContainer.classList.add('border')
-        cartContainer.innerHTML = `<p>No hay nada en el carrito</p>`;
+        cartContainer.innerHTML = `<p class="cart-empty">No hay nada en el carrito</p>`;
       return;
     }
     cartContainer.innerHTML = cart.map(renderProductCart).join('');
@@ -326,13 +553,18 @@ const chequearCarro = () => {
 
 const addProduct = e => {
     if (!e.target.classList.contains('button-add')) return;
-    const { id, nombre, precio, imagen } = e.target.dataset;
+    if(!user){
+        showAlert("El usuario debe estar logueado")
+        renderErrorAlert()
+        return;
+    }
+    const { id, nombre, precio, imagen, categoria, sabor } = e.target.dataset;
 
-    const datosDelProducto = (id, nombre, precio, imagen) => {
-        return { id, nombre, precio, imagen };
+    const datosDelProducto = (id, nombre, precio, imagen,  categoria, sabor) => {
+        return { id, nombre, precio, imagen,  categoria, sabor };
     };
   
-    const product = datosDelProducto(id, nombre, precio, imagen)
+    const product = datosDelProducto(id, nombre, precio, imagen,  categoria, sabor)
   
     if (cart.find(item => item.id === product.id)) {
         cart = cart.map(cartProduct =>
@@ -360,18 +592,52 @@ const countCart = () => {
 const countTotal = () => {
     let countTotal = 0
     cart.map(product =>countTotal = (parseInt(product.precio) * parseInt(product.quantity)) + countTotal)
+  
+    saveLocalStorageTotal(countTotal)
     totalCarrito.innerHTML = parseInt(countTotal)
 };
 
 const showQuestion = (message) => {
     messageContainer.textContent = message
 }
+const showQuestionCompra = (message) => {
+    messageContainerCompra.textContent = message
+}
 const showAlert = (message) => {
     alertContainer.textContent = message
 }
 
-const functionalityAccept = () => {
+
+// Cerrar seccion 
+
+const functionalityLogOut = () => {
+    spinnerActive()
     localStorage.removeItem("cart");
+    localStorage.removeItem("usuario");
+    countCart()
+    countTotal()  
+    renderCart() 
+    verifyUser() 
+   
+
+    setTimeout(() => {
+        showAlert("Se realizó la solicitud con éxito")
+        renderAlert() 
+    }, "900");
+    
+    setTimeout(()=>{
+        spinnerDeactive()
+        location.reload()
+    },"1500")
+     
+}
+
+//Agregar la orden de compra a la DB
+
+const functionalityAccept = () => {
+    spinnerActive()
+    localStorage.removeItem("cart");
+    localStorage.removeItem("total");
     countCart()
     countTotal()    
     questionMessage.classList.remove('active')
@@ -379,32 +645,60 @@ const functionalityAccept = () => {
     
     
    
-    location.reload()
-    renderCart() 
-
-    showAlert("Se realizó la solicitud con éxito")
-    renderAlert() 
+    setTimeout(() => {
+        showAlert("Se realizó la solicitud con éxito")
+        renderAlert() 
+    }, "900");
+    
+    setTimeout(()=>{
+        spinnerDeactive()
+        location.reload()
+    },"1500")
      
 }
 const functionalityAcceptBuy = () => {
-    localStorage.removeItem("cart");
-    countCart()
-    countTotal()    
-    questionMessage.classList.remove('active')
-    questionMessage.classList.add('hidden')
+    
+    questionMessageCompra.classList.remove('active')
+    questionMessageCompra.classList.add('hidden')
     
    
-    location.reload()
-    renderCart() 
+    entity = "orden"
 
-    showAlert("Se realizó la solicitud con éxito")
-    renderAlert() 
+    let data = {
+        "personaId":user.data[0].id,
+        "precioTotal":total,
+        "lineasOrden":getOrderRows(cart)
+    }
+
+    ajaxController.create(entity, data).then( () => {
+        localStorage.removeItem("cart");
+        localStorage.removeItem("total");
+        countCart()
+        countTotal()    
+        questionMessageCompra.classList.remove('active')
+        questionMessageCompra.classList.add('hidden')
+        
+        showAlert("Se guardó su compra")
+        renderAlert() 
+        spinnerActive()
+       
+        setTimeout(()=>{
+            spinnerDeactive()
+            location.reload()
+        },"4000")
+
+    }, (error)=> {
+        showAlert(error.response.data.error)
+        renderErrorAlert() 
+    })
      
 }
 
 const functionalityCancel = () => {
     questionMessage.classList.remove('active')
     questionMessage.classList.add('hidden')
+    questionMessageCompra.classList.remove('active')
+    questionMessageCompra.classList.add('hidden')
     ulCart.classList.remove('hidden')    
     ulCart.classList.add('active')    
     cartContainerButton.classList.remove('hidden')
@@ -425,18 +719,28 @@ const deleteCart = () => {
 
 
 }  ;
+
+const getOrderRows = (cart)=> {
+    let orderRows = []
+    for (let row of cart){
+        orderRows.push({
+            "productoId":parseInt(row.id),
+            "quantity": row.quantity,
+            "precio":parseFloat(row.precio)
+        })
+    }
+    return orderRows
+}
+
+
 const buyCart = () => {
-    questionMessage.classList.remove('hidden')
-    questionMessage.classList.add('active')
-    showQuestion("¿Desea continuar con la compra?")
+    questionMessageCompra.classList.remove('hidden')
+    questionMessageCompra.classList.add('active')
+    showQuestionCompra("¿Desea continuar con la compra?")
     cartContainerButton.classList.remove('active')
     cartContainerButton.classList.add('hidden')
     ulCart.classList.remove('active');
     ulCart.classList.add('hidden')
-     
-    let OrdenesDeCompra = JSON.parse(localStorage.getItem('OrdenesDeCompra')) || JSON.parse(localStorage.getItem('cart'));
-    let OrdenDeCompra = JSON.parse(localStorage.getItem('cart'))
-    localStorage.setItem('OrdenesDeCompra', JSON.stringify(OrdenesDeCompra = [...OrdenesDeCompra, OrdenDeCompra]));
    
 
 }  ;
@@ -457,6 +761,7 @@ const init = () => {
     window.addEventListener('load', countCart);
     window.addEventListener('load', countTotal);
     document.addEventListener('DOMContentLoaded', renderCart);
+    document.addEventListener('DOMContentLoaded', verifyUser);
     productosContenedorPasteles.addEventListener('click', addProduct)
     productosContenedorPasteles.addEventListener('click', countCart)
     productosContenedorPasteles.addEventListener('click', countTotal)
@@ -469,7 +774,10 @@ const init = () => {
     buttonDelete.addEventListener('click', deleteCart);
     buttonBuy.addEventListener('click', buyCart);
     buttonAceptar.addEventListener('click', functionalityAccept);
+    buttonAceptarCompra.addEventListener('click', functionalityAcceptBuy);
     buttonCancelar.addEventListener('click', functionalityCancel); 
+
+    buttonLogOut.addEventListener("click", functionalityLogOut)
 };
   
 init();

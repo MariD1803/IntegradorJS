@@ -1,0 +1,189 @@
+@media (max-width: 1100px) {
+    .table-container {
+        margin: 0.5rem 0 3.5rem 0;
+    }
+
+    .imagen-orden {
+        height: 50px;
+        width: 89px;
+        border-radius: 8px;
+        margin: 0.1rem;
+    }
+
+    .mensaje-error {
+        font-size: 20px;
+    }
+
+     /*Spinner*/
+  .lds-heart div {
+    
+    width: 50px;
+    height: 50px;
+    
+  }
+  .lds-heart div:after,
+  .lds-heart div:before {
+    
+    width: 50px;
+    height: 50px;
+   
+  }
+  .lds-heart div:before {
+    left: -24px;
+    
+  }
+  .lds-heart div:after {
+    top: -24px;
+  }   
+
+  .lds-ellipsis {
+    right: 0;
+    position: absolute;
+    width: 55%;
+    height: 80px;
+  }
+
+  
+}
+
+
+@media (max-width: 840px) {
+    .Subtitulo{
+        font-size: 32px;
+    }
+
+    .button-see-orders {
+        font-size: var(--small);
+    }
+
+    .space-in-page {
+        height: 300px;
+    }
+
+    footer h3 {
+        font-size: var(--reg_small);
+    }
+
+    .mensaje-error {
+        font-size: 16px;
+    }
+
+    /*Spinner*/
+    .lds-heart-active{
+        top: 70px;
+     }
+  .lds-heart div {
+    
+    width: 40px;
+    height: 40px;
+    
+  }
+  .lds-heart div:after,
+  .lds-heart div:before {
+    
+    width: 40px;
+    height: 40px;
+   
+  }
+  .lds-heart div:before {
+    left: -30px;
+    
+  }
+  .lds-heart div:after {
+    top: -30px;
+  }   
+}
+
+
+@media (max-width: 590px) {
+    .Subtitulo{
+        font-size: var(--medium);
+    }
+
+    .button-see-orders {
+        font-size: 12px;
+    }
+    footer h3 {
+        font-size: var(--small);
+    }
+
+    .imagen-orden {
+        height: 50px;
+        width: 60px;
+        border-radius: 8px;
+        margin: 0.1rem;
+    }
+
+    .mensaje-error {
+        font-size: 14px;
+        width: 90%;
+    }
+
+    /*Spinner*/
+
+    .lds-heart-active{
+        top: 90px;
+     }
+
+    .lds-heart-active {
+       
+        width: 100%;
+        
+        padding-block-start: 0px;
+        height: 100%;
+    }
+    .lds-heart {
+        display: inline-block;
+        position: absolute;
+        /* top: 50%; */
+        width: 100px;
+        height: 100px;
+        transform: rotate(45deg);
+        left: 42%;
+        
+    }
+    .lds-heart div {
+        
+        width: 30px;
+        height: 30px;
+        
+    }
+    .lds-heart div:after,
+    .lds-heart div:before {
+        
+        width: 30px;
+        height: 30px;
+    
+    }
+    .lds-heart div:before {
+        left: -15px;
+        
+    }
+    .lds-heart div:after {
+        top: -15px;
+    }  
+
+    .lds-ellipsis {
+        width: 60%;
+    }
+
+
+  
+}
+
+@media (max-width: 360px) {
+    .lds-heart {
+        
+        left: 38%;
+    }
+
+    .imagen-orden {
+        height: 60px;
+        width: 60px;
+        border-radius: 8px;
+        margin: 0.1rem;
+    }
+
+    
+   
+}

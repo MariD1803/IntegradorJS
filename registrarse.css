@@ -36,7 +36,57 @@ body {
     top: 0;
 }
 
+/*Alerta */
 
+.hidden {
+    display: none !important;
+}
+
+.animation {        
+    animation: opacity-html 0.7s linear;
+}
+
+.active {
+    position: absolute;
+    transform: translate(0) !important;
+    transition: all 0.2s !important;
+    background-color: var(--pink);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    align-items: center;
+    margin-top: 10px;
+    padding: 0;
+    bottom: 0;
+}
+.active-error {
+    position: absolute;
+    transform: translate(0) !important;
+    transition: all 0.2s !important;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    align-items: center;
+    margin-top: 10px;
+    padding: 0;
+    bottom: 0;
+}
+
+.error {
+    border-color: red !important;
+    box-shadow: -3px -1px 37px 11px rgba(252,29,29,0.38);
+-webkit-box-shadow: -3px -1px 37px 11px rgba(252,29,29,0.38);
+-moz-box-shadow: -3px -1px 37px 11px rgba(252,29,29,0.38);
+}
 /*Navbar*/
 .navbar {
     display: flex;
@@ -126,6 +176,83 @@ body {
 #ul-login li {
     text-align: center;
 }
+/*Spinner*/
+
+.lds-heart-active {
+    background-color: #252525ed;
+    cursor: none;
+    width: 100%;
+    position: fixed;
+    right: 0;
+    flex-direction: column;
+    text-align: center;
+    padding-block-start: 30px;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    z-index: 9;
+    top: 80px;
+}
+  .lds-heart {
+    display: inline-block;
+    position: absolute;
+    top: 44%;
+    width: 100px;
+    height: 100px;
+    transform: rotate(45deg);
+    transform-origin: 40px 40px;
+    left: 48%;
+  }
+  .lds-heart div {
+    top: 32px;
+    left: 32px;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #fcf;
+    animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  .lds-heart div:after,
+  .lds-heart div:before {
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: #fcf;
+  }
+  .lds-heart div:before {
+    left: -36px;
+    border-radius: 50% 0 0 50%;
+  }
+  .lds-heart div:after {
+    top: -36px;
+    border-radius: 50% 50% 0 0;
+  }
+  @keyframes lds-heart {
+    0% {
+      transform: scale(0.95);
+    }
+    5% {
+      transform: scale(1.1);
+    }
+    39% {
+      transform: scale(0.85);
+    }
+    45% {
+      transform: scale(1);
+    }
+    60% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(0.9);
+    }
+  }
+  
+
+
 
 
 /*Main*/
@@ -224,6 +351,17 @@ form {
 
 }
 
+#registrarse-person{
+    margin-top: 20px;
+    height: 30px;
+    background-color: var(--blue);
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
 #fondo {
     margin-top: 90px;
     display: flex;
@@ -304,243 +442,3 @@ footer h3 {
     text-align: center;
 }
 
-
-
-
-
-@media (max-width: 1100px) {
-
-    .navbar {
-        height: 70px;
-    }
-
-    .header img {
-        height: 70px;
-        width: 90px;
-        padding-inline-start: 0;
-    }
-    .navbar a {
-        font-size: var(--medium);
-    }
-
-    /*Body*/
-
-    .text_form {
-        width: 50%;
-    }
-    .linea_sub {
-        width: 120px;
-    }
-
-
-}
-
-
-@media (max-width: 870px) {
-    html {
-        scroll-padding-top: 70px;
-    }
-
-    .header {
-        height: 60px;
-    }
-
-    .header img {
-        height: 60px;
-        width: 80px;
-    }
-
-    .navbar a {
-        font-size: var(--regular);
-    }
-
-    .navbar i {
-        font-size: var(--medium);  
-    }
-
-    #ul-login {
-        top: 60px;
-        width: 160px;
-        
-    }
-
-    /*Body*/
-
-
-    .Subtitulo {
-        font-size: var(--medium);
-    }
-
-    .linea_sub {
-        width: 100%;
-    }
-
-    .linea_subtitulo {
-        width: 96%;
-    }
-    
-    #fondo {
-        margin-top: 60px;
-        padding: 30px;
-    }
-
-    .text_form {
-        padding: 0;        
-        width: 50%;
-    }
-
-    .text_form h1 {
-        font-size: var(--medium);
-    }
-
-    .img_form {
-        padding: 10px;
-        gap: 15%;
-    }
-    
-    .img_form i {
-        font-size: var(--large);
-    }
-
-    /*Footer*/
-
-    footer h3 {
-        font-size: var(--small);
-    }
-
-   
-    
-}
-
-
-@media (max-width: 590px) {
-
-    html {
-        scroll-padding-top: 90px;
-        height: 100vh;
-    }
-
-    .header img {
-        height: 60px;
-        width: 100px;
-        margin-inline-start: 4px;
-    }
-
-    .navbar {
-        padding-inline-end: 10px;
-        gap: 20px;
-    }
-
-    .navbar i {
-        display: block;
-        padding-inline-end: 30px;
-    }
-
-    #ul-login {
-        width: 30%;
-
-    }
-
-
-    /*Body*/
-    
-
-    .linea_subtitulo {
-        width: 96%;
-    }
-
-    .linea_sub {
-        width: 100%;
-    }
-    
-    form {
-        margin-top: 40px;
-        width: 100%;
-    }
-    
-    
-    
-    .text_form {
-        gap: 10px;
-        padding: 0;
-        width: 100%;
-        margin-top: 40px;
-        align-items: center;
-    }  
-    
-    .text_form h3 {
-        text-align: left;
-        width: 90%;
-    }
-
-    .form {
-        font-size: var(--reg_small);
-        gap: 10px;
-        justify-content: center;
-    }
-
-    .form input {
-        font-size: var(--small);
-    }
-
-    .form div {
-        gap: 5px;  
-    }
-
-    .form_button {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .checkbox {
-        width: 90%;
-    }
-
-    .img_form {
-        gap: 10%;
-        margin-top: 55px;
-        display: flex;
-        justify-content: space-evenly;
-    }
-    
-    .img_form i {
-        font-size: var(--medium);
-    }
-
-    .text_form h1 {
-        font-size: var(--regular);
-        margin-bottom: 0;
-    }
-
-    .con_grande {
-    
-        width: 90%;
-    }
-    
-    .con_pequeño {
-        width: 44%;
-    }
-   
-    
-    #fondo {
-        margin-top: 30px;
-        padding: 10px;
-        gap: 20px;
-        flex-direction: column;
-    }
-    
-    #registrarse {
-        margin: 20px 0px;
-        
-    }
-    
-    
-    
-    /*Footer*/    
-    
-    
-    footer h3 {
-        font-size: var(--small);
-    }
-}

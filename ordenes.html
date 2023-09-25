@@ -6,13 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
-    <link rel="icon" type="image.png" href="./img/icononav.png">
+        crossorigin="anonymous" referrerpolicy="no-referrer" />        
+        <link rel="icon" type="image.png" href="./img/icononav.png">
         <link rel="stylesheet" href="ingresar.css">
-        <link rel="stylesheet" href="mediaqueryingresar.css">
+        <link rel="stylesheet" href="ordenes.css">
+        <link rel="stylesheet" href="mediaqueryordenes.css">
     </head>
     <body>
+        
         <header class="header">
             <a href="index.html"><img src="./img/logo-removebg-preview.png" alt="logo"></a>
        
@@ -25,45 +26,37 @@
             <div class="spinner hidden"><div class="lds-heart hidden"><div></div></div></div>
             <div class="linea_subtitulo">
                 <div class="linea_sub"></div>    
-                <h3 class="Subtitulo"> Iniciar Sesión</h3>
+                <h3 class="Subtitulo"> Mis Ordenes</h3>
                 <div class="linea_sub"></div>
             </div>
 
-            <form target="_blank" >
+           
 
-                <div id="form">
-                    <div class="div_form">
-                    <label>Usuario</label>
-                    <input type="text" id="user" name="user" >
-                    </div>
+            <div id="form">
+                <button class="button-see-orders">Ver Ordenes</button>
+            </div>   
 
-                    <div class="div_form">
-                        <label >Contraseña</label>
-                        <input type="password" id="password" name="password">
-                    </div>            
-                </div>   
+            <div class="hidden orders-container" >
+                
 
-                <div id="form_center">
-                    <a><p>¿Olvidates tu contraseña?</p></a>                  
-                </div>
-
-                <button id="button-login">INICIAR SESIÓN</button>
-                <div id="form_buttom">
-                    <p>¿No tienes cuenta?</p>
-                    <a href="registrarse.html"><p>Crear Cuenta </p></a>
-                </div>
             
-                <p class="alert-container hidden"></p>
-            </form>
+            </div>
+
+            <div class="space-in-page"></div>
+            
+           
 
             <footer>        
                 <h3>Todos los derechos reservados © 2022 - DC&CO</h3>
             </footer>
 
+            <p class="alert-container hidden"></p>
+            
         </main>      
+    
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="./ajaxController.js"></script> 
-        <script src="./ingresar.js"></script> 
-     
+        <script src="./ajaxController.js"></script>
+        <script src="./ordenes.js"></script>
     </body>
 </html>
+    
