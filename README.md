@@ -7,7 +7,7 @@ Un Ecommerce de un negocio de pastelería, que incluye tanto FrontEnd como Backe
 A continuación adjunto el link del deploy a vercel: 
 
 ```
-[Front](https://integradorjavascript-six.vercel.app/index.html) 
+https://integradorjavascript-six.vercel.app/index.html
 ```
 
 ## BackEnd 
@@ -15,7 +15,7 @@ A continuación adjunto el link del deploy a vercel:
 A continuación adjunto el link del deploy a vercel: 
 
 ```
-[Back](https://dulce-cerecita-be.vercel.app/) 
+https://dulce-cerecita-be.vercel.app/
 
 ```
 
