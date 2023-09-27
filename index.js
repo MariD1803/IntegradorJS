@@ -32,6 +32,7 @@ const messageContainer = document.querySelector('.message')
 const messageContainerCompra = document.querySelector('.message-compra')
 const buttonBuy = document.querySelector('.button-buy')
 const buttonCancelar = document.querySelector('.button-cancelar')
+const buttonCancelarCompra = document.querySelector('.button-cancelar-compra')
 const buttonAceptar = document.querySelector('.button-aceptar')
 const buttonAceptarCompra = document.querySelector('.button-aceptar-compra')
 //opciones de ingreso y Logout
@@ -705,6 +706,17 @@ const functionalityCancel = () => {
     cartContainerButton.classList.add('active')
 
 }
+const functionalityCancelCompra = () => {
+    questionMessageCompra.classList.remove('active')
+    questionMessageCompra.classList.add('hidden')
+    questionMessage.classList.remove('active')
+    questionMessage.classList.add('hidden')
+    ulCart.classList.remove('hidden')    
+    ulCart.classList.add('active')    
+    cartContainerButton.classList.remove('hidden')
+    cartContainerButton.classList.add('active')
+
+}
 
 
 
@@ -776,6 +788,7 @@ const init = () => {
     buttonAceptar.addEventListener('click', functionalityAccept);
     buttonAceptarCompra.addEventListener('click', functionalityAcceptBuy);
     buttonCancelar.addEventListener('click', functionalityCancel); 
+    buttonCancelarCompra.addEventListener('click', functionalityCancelCompra); 
 
     buttonLogOut.addEventListener("click", functionalityLogOut)
 };
