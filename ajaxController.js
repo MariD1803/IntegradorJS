@@ -1,7 +1,7 @@
 
 class AJAXController{
     API_PORT = 3000
-    API_URL = `http://127.0.0.1:${this.API_PORT}`
+    API_URL = `https://dulce-cerecita-be.vercel.app`
 
     entities = ['persona','mensaje','orden','producto','usuario']
 
